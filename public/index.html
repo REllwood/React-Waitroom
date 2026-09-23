@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>React Waitroom rehearsal panel</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Development request rehearsal</p>
+        <h1>React Waitroom</h1>
+      </div>
+      <p id="interference-status" class="interference-status" aria-live="polite">No active interference</p>
+    </header>
+
+    <main>
+      <section class="bench" aria-labelledby="controls-heading">
+        <div class="bench-heading">
+          <div>
+            <p class="section-index">01 / Boundary</p>
+            <h2 id="controls-heading">Shape a request</h2>
+          </div>
+          <button id="reset-button" class="quiet-button" type="button">Reset all</button>
+        </div>
+
+        <form id="scenario-form">
+          <fieldset>
+            <legend>Registered boundary</legend>
+            <div id="boundary-list" class="boundary-list"></div>
+          </fieldset>
+
+          <div class="control-row">
+            <label for="scenario-kind">Outcome</label>
+            <select id="scenario-kind" name="kind">
+              <option value="pass">Pass through</option>
+              <option value="latency">Delayed success</option>
+              <option value="timeout">Timeout</option>
+              <option value="offline">Offline</option>
+              <option value="error">Service error</option>
+              <option value="empty">Empty response</option>
+              <option value="partial">Partial records</option>
+            </select>
+          </div>
+
+          <div class="timing-grid">
+            <div>
+              <label for="delay">Base delay <output id="delay-output" for="delay">1200 ms</output></label>
+              <input id="delay" name="delay" type="range" min="0" max="5000" step="100" value="1200">
+            </div>
+            <div>
+              <label for="jitter">Seeded jitter <output id="jitter-output" for="jitter">300 ms</output></label>
+              <input id="jitter" name="jitter" type="range" min="0" max="1500" step="50" value="300">
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="apply-button" type="submit">Apply scenario</button>
+            <button id="run-button" type="button">Run request</button>
+            <button id="cancel-button" class="quiet-button" type="button" disabled>Cancel request</button>
+          </div>
+        </form>
+
+        <div id="operation-status" class="operation-status" role="status" aria-live="polite">Ready to rehearse.</div>
+
+        <details class="fixture-tools">
+          <summary>Fixture import and export</summary>
+          <label for="fixture-json">Readable scenario fixture</label>
+          <textarea id="fixture-json" rows="8" spellcheck="false"></textarea>
+          <div class="action-row">
+            <button id="export-button" type="button">Prepare export</button>
+            <button id="import-button" class="quiet-button" type="button">Import fixture</button>
+          </div>
+        </details>
+      </section>
+
+      <section class="result-stage" aria-labelledby="stage-heading">
+        <div class="stage-heading">
+          <div>
+            <p class="section-index">02 / Host interface</p>
+            <h2 id="stage-heading">Travel results</h2>
+          </div>
+          <p id="result-state">Not requested</p>
+        </div>
+        <div id="travel-results" class="travel-results">
+          <p class="empty-copy">Run the selected boundary to observe the host interface.</p>
+        </div>
+      </section>
+
+      <section class="timeline" aria-labelledby="timeline-heading">
+        <div>
+          <p class="section-index">03 / Evidence</p>
+          <h2 id="timeline-heading">Request timeline</h2>
+        </div>
+        <ol id="timeline-list" class="timeline-list">
+          <li>No events recorded.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

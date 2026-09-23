@@ -1,0 +1,25 @@
+{
+  "name": "react-waitroom",
+  "version": "0.1.0",
+  "description": "A development panel for rehearsing every awkward state in a React interface.",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REllwood/react-waitroom.git"
+  },
+  "homepage": "https://github.com/REllwood/react-waitroom#readme",
+  "bugs": {
+    "url": "https://github.com/REllwood/react-waitroom/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "check:syntax": "node --check src/engine.js && node --check src/server.js && node --check public/app.js",
+    "check": "npm test && npm run check:syntax"
+  }
+}

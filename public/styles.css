@@ -1,0 +1,403 @@
+:root {
+  color: #1e2726;
+  background: #eceeea;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+select,
+textarea,
+input {
+  font: inherit;
+}
+
+button,
+select {
+  min-height: 2.75rem;
+}
+
+button {
+  border: 1px solid #163f38;
+  border-radius: 0.2rem;
+  background: #163f38;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d2d28;
+}
+
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #bd4b2b;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.quiet-button {
+  background: transparent;
+  color: #163f38;
+}
+
+.quiet-button:hover {
+  background: #dce2dc;
+}
+
+.masthead {
+  align-items: end;
+  background: #f8f8f4;
+  border-bottom: 1px solid #a9b0aa;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem clamp(1rem, 4vw, 4rem);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-bottom: 0.8rem;
+}
+
+.eyebrow,
+.section-index {
+  color: #53605e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.interference-status {
+  border: 1px solid #89918d;
+  margin: 0 0 0.5rem 1rem;
+  max-width: 32rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.interference-status[data-active="true"] {
+  border-color: #bd4b2b;
+  color: #8a2f18;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(19rem, 0.9fr) minmax(22rem, 1.1fr);
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
+.bench,
+.result-stage,
+.timeline {
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.bench {
+  background: #f8f8f4;
+  border-right: 1px solid #a9b0aa;
+  grid-row: span 2;
+}
+
+.bench-heading,
+.stage-heading {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+fieldset {
+  border: 0;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+legend,
+label {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.boundary-list {
+  border: 1px solid #a9b0aa;
+  margin-top: 0.5rem;
+}
+
+.boundary-option {
+  align-items: start;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr;
+  padding: 0.9rem;
+}
+
+.boundary-option + .boundary-option {
+  border-top: 1px solid #c9cdc9;
+}
+
+.boundary-option input {
+  margin-top: 0.25rem;
+}
+
+.boundary-option strong,
+.boundary-option small {
+  display: block;
+}
+
+.boundary-option small {
+  color: #53605e;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+.control-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+select,
+textarea {
+  background: #fff;
+  border: 1px solid #7b8581;
+  border-radius: 0.15rem;
+  color: #1e2726;
+  padding: 0.65rem;
+  width: 100%;
+}
+
+.timing-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.25rem;
+}
+
+.timing-grid label {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="range"] {
+  accent-color: #bd4b2b;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.operation-status {
+  border-left: 4px solid #70807a;
+  margin-top: 1.25rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.operation-status[data-state="loading"],
+.loading-copy {
+  border-left-color: #bd4b2b;
+  font-weight: 700;
+}
+
+.operation-status[data-state="loading"]::before,
+.loading-copy::before {
+  animation: pulse 0.9s steps(2, end) infinite;
+  content: "···";
+  display: inline-block;
+  margin-right: 0.45rem;
+}
+
+.fixture-tools {
+  border-top: 1px solid #a9b0aa;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.fixture-tools summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.fixture-tools label {
+  display: block;
+  margin: 1rem 0 0.35rem;
+}
+
+.fixture-tools textarea {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.82rem;
+  resize: vertical;
+}
+
+.result-stage {
+  background: #eceeea;
+  border-bottom: 1px solid #a9b0aa;
+}
+
+.stage-heading > p {
+  color: #53605e;
+  font-variant-numeric: tabular-nums;
+}
+
+.travel-results {
+  display: grid;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.travel-results article {
+  border-top: 1px solid #a9b0aa;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  padding: 1rem 0;
+}
+
+.travel-results h3,
+.travel-results p {
+  margin-bottom: 0;
+}
+
+.flight-detail {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.empty-copy,
+.error-copy,
+.booking-confirmation,
+.loading-copy {
+  border: 1px solid #a9b0aa;
+  padding: 1.5rem;
+}
+
+.error-copy {
+  border-color: #9b3b24;
+  color: #762913;
+}
+
+.timeline {
+  background: #dfe3de;
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.timeline-list li {
+  align-items: baseline;
+  border-top: 1px solid #a9b0aa;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 5.5rem 1fr auto;
+  padding: 0.55rem 0;
+}
+
+.timeline-list time,
+.timeline-list small {
+  color: #53605e;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 800px) {
+  .masthead {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .interference-status {
+    margin: 1rem 0 0;
+  }
+
+  main {
+    display: block;
+  }
+
+  .bench {
+    border-bottom: 1px solid #a9b0aa;
+    border-right: 0;
+  }
+
+  .timing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .travel-results article {
+    gap: 0.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .flight-detail {
+    text-align: left;
+  }
+
+  .timeline-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
