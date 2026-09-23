@@ -26,8 +26,8 @@ Most screens are built against a fast local API that always answers. Real users 
 Requires Node.js 22 or newer. No `npm install` needed.
 
 ```sh
-git clone https://github.com/REllwood/react-waitroom.git
-cd react-waitroom
+git clone https://github.com/REllwood/ReactWaitroom.git
+cd ReactWaitroom
 npm start
 ```
 
