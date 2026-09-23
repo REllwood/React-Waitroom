@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/REllwood/ReactWaitroom.git"
+    "url": "git+https://github.com/REllwood/React-Waitroom.git"
   },
-  "homepage": "https://github.com/REllwood/ReactWaitroom#readme",
+  "homepage": "https://github.com/REllwood/React-Waitroom#readme",
   "bugs": {
-    "url": "https://github.com/REllwood/ReactWaitroom/issues"
+    "url": "https://github.com/REllwood/React-Waitroom/issues"
   },
   "type": "module",
   "engines": {
